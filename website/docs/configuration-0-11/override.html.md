@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Override Files - 0.11 Configuration Language"
 sidebar_current: "docs-conf-old-override"
 description: |-
