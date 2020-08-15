@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Data Sources - 0.11 Configuration Language"
 sidebar_current: "docs-conf-old-data-sources"
 description: |-
