@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "base64gzip - Functions - Configuration Language"
 sidebar_current: "docs-funcs-encoding-base64gzip"
 description: |-

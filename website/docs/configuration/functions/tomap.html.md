@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "tomap - Functions - Configuration Language"
 sidebar_current: "docs-funcs-conversion-tomap"
 description: |-

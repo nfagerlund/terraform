@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "map - Functions - Configuration Language"
 sidebar_current: "docs-funcs-collection-map"
 description: |-

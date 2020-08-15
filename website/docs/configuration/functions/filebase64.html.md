@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "filebase64 - Functions - Configuration Language"
 sidebar_current: "docs-funcs-file-filebase64"
 description: |-

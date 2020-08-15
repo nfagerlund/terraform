@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "join - Functions - Configuration Language"
 sidebar_current: "docs-funcs-string-join"
 description: |-

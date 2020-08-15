@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "urlencode - Functions - Configuration Language"
 sidebar_current: "docs-funcs-encoding-urlencode"
 description: |-

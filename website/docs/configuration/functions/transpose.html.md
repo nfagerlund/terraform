@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "transpose - Functions - Configuration Language"
 sidebar_current: "docs-funcs-collection-transpose"
 description: |-
