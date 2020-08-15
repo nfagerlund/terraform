@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "abspath - Functions - Configuration Language"
 sidebar_current: "docs-funcs-file-abspath"
 description: |-

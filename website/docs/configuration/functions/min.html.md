@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "min - Functions - Configuration Language"
 sidebar_current: "docs-funcs-numeric-min"
 description: |-

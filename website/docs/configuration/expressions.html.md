@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Expressions - Configuration Language"
 sidebar_current: "docs-config-expressions"
 description: |-

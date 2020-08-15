@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "floor - Functions - Configuration Language"
 sidebar_current: "docs-funcs-numeric-floor"
 description: |-

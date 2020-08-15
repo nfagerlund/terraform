@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "pathexpand - Functions - Configuration Language"
 sidebar_current: "docs-funcs-file-pathexpand"
 description: |-

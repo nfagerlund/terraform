@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Backend Configuration - Configuration Language"
 ---
 

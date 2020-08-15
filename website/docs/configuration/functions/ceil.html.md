@@ -1,5 +1,5 @@
 ---
-layout: "functions"
+layout: "docs-language"
 page_title: "ceil - Functions - Configuration Language"
 sidebar_current: "docs-funcs-numeric-ceil"
 description: |-
