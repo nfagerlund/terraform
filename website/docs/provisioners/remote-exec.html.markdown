@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Provisioner: remote-exec"
 sidebar_current: "docs-provisioners-remote"
 description: |-

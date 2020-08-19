@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Provisioner: puppet"
 sidebar_current: "docs-provisioners-puppet"
 description: |-
