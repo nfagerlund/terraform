@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Providers"
 sidebar_current: "docs-providers"
 description: |-
