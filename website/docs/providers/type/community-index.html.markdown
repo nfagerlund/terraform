@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Community Providers"
 sidebar_current: "docs-providers-community"
 description: |-
