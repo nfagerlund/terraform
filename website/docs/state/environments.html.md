@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "State: Environments"
 sidebar_current: "docs-state-env"
 description: |-
