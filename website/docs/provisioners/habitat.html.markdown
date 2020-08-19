@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Provisioner: habitat"
 sidebar_current: "docs-provisioners-habitat"
 description: |-
