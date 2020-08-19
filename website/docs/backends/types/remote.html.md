@@ -1,5 +1,5 @@
 ---
-layout: "backend-types"
+layout: "docs-language"
 page_title: "Backend Type: remote"
 sidebar_current: "docs-backends-types-enhanced-remote"
 description: |-

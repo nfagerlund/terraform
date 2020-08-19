@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Backends: Migrating From 0.8.x and Earlier"
 sidebar_current: "docs-backends-migrate"
 description: |-

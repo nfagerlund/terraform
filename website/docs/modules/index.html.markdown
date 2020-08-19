@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Creating Modules"
 sidebar_current: "docs-modules"
 description: |-

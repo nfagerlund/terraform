@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Module Composition"
 sidebar_current: "docs-modules-composition"
 description: |-

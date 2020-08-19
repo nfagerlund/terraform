@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Publishing Modules"
 sidebar_current: "docs-modules-publish"
 description: |-
