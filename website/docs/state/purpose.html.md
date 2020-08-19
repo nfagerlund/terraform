@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "State"
 sidebar_current: "docs-state-purpose"
 description: |-
