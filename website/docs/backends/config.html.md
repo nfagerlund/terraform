@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Backends: Configuration"
 sidebar_current: "docs-backends-config"
 description: |-

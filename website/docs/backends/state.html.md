@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-language"
 page_title: "Backends: State Storage and Locking"
 sidebar_current: "docs-backends-state"
 description: |-
