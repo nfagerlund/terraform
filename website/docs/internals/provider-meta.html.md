@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Provider Metadata"
 sidebar_current: "docs-internals-provider-meta"
 description: |-

@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Archiving Providers"
 sidebar_current: "docs-internals"
 description: |-

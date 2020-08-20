@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Internals: Resource Address"
 sidebar_current: "docs-internals-resource-addressing"
 description: |-

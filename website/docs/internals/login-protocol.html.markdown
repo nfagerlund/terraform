@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Login Protocol"
 sidebar_current: "docs-internals-login-protocol"
 description: |-

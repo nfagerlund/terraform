@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Resource Graph"
 sidebar_current: "docs-internals-graph"
 description: |-
