@@ -1,5 +1,5 @@
 ---
-layout: "docs-cli"
+layout: "docs-language"
 page_title: "Upgrading to Terraform 0.11"
 sidebar_current: "upgrade-guides-0-11"
 description: |-
