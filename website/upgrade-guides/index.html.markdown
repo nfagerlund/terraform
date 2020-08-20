@@ -1,5 +1,5 @@
 ---
-layout: "guides"
+layout: "docs-language"
 page_title: "Upgrade Guides"
 sidebar_current: "upgrade-guides"
 description: |-
