@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: untaint"
 sidebar_current: "docs-commands-untaint"
 description: |-

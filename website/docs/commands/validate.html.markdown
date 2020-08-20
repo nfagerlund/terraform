@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: validate"
 sidebar_current: "docs-commands-validate"
 description: |-

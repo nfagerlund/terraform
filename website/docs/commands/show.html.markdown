@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: show"
 sidebar_current: "docs-commands-show"
 description: |-

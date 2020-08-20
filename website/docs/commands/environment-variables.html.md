@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Environment Variables"
 sidebar_current: "docs-commands-environment-variables"
 description: |-

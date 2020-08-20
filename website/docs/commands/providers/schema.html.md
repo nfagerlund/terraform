@@ -1,5 +1,5 @@
 ---
-layout: "commands-providers"
+layout: "docs-cli"
 page_title: "Command: providers schema"
 sidebar_current: "docs-commands-providers-schema"
 description: |-

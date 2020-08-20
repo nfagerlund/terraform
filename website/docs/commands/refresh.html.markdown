@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: refresh"
 sidebar_current: "docs-commands-refresh"
 description: |-

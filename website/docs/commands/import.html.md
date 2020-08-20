@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: import"
 sidebar_current: "docs-commands-import"
 description: |-

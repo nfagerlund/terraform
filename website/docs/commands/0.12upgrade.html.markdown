@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: 0.12upgrade"
 sidebar_current: "docs-commands-012upgrade"
 description: |-

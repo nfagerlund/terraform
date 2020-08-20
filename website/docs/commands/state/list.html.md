@@ -1,5 +1,5 @@
 ---
-layout: "commands-state"
+layout: "docs-cli"
 page_title: "Command: state list"
 sidebar_current: "docs-commands-state-sub-list"
 description: |-
