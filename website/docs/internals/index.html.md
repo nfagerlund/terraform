@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Internals"
 sidebar_current: "docs-internals"
 description: |-

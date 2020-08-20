@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Credentials Helpers"
 sidebar_current: "docs-internals-credentials-helpers"
 description: |-

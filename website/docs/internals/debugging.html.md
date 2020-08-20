@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Debugging"
 sidebar_current: "docs-internals-debug"
 description: |-

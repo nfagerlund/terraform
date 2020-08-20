@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Module Registry Protocol"
 sidebar_current: "docs-internals-module-registry-protocol"
 description: |-

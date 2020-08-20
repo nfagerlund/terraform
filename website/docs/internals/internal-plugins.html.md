@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Internal Plugins"
 sidebar_current: "docs-internals-plugins"
 description: |-

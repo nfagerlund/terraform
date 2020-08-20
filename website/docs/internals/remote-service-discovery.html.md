@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Internals: Remote Service Discovery"
 sidebar_current: "docs-internals-remote-service-discovery"
 description: |-

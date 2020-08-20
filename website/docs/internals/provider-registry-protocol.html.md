@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "extend"
 page_title: "Provider Registry Protocol"
 sidebar_current: "docs-internals-provider-registry-protocol"
 description: |-
