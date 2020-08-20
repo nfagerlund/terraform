@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: taint"
 sidebar_current: "docs-commands-taint"
 description: |-

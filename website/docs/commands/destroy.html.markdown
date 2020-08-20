@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: destroy"
 sidebar_current: "docs-commands-destroy"
 description: |-

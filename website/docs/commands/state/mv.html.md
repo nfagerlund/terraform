@@ -1,5 +1,5 @@
 ---
-layout: "commands-state"
+layout: "docs-cli"
 page_title: "Command: state mv"
 sidebar_current: "docs-commands-state-sub-mv"
 description: |-

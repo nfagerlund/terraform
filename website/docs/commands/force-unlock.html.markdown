@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: force-unlock"
 sidebar_current: "docs-commands-force-unlock"
 description: |-

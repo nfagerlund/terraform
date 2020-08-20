@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: fmt"
 sidebar_current: "docs-commands-fmt"
 description: |-

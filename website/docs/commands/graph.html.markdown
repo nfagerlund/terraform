@@ -1,5 +1,5 @@
 ---
-layout: "docs"
+layout: "docs-cli"
 page_title: "Command: graph"
 sidebar_current: "docs-commands-graph"
 description: |-
