@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Infrastructure Software Providers"
 sidebar_current: "docs-providers-infra"
 description: |-

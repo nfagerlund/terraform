@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Network Providers"
 sidebar_current: "docs-providers-network"
 description: |-

@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Modules - Configuration Language"
 sidebar_current: "docs-config-modules"
 description: |-

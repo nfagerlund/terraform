@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Database Providers"
 sidebar_current: "docs-providers-database"
 description: |-

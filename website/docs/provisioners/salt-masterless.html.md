@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Provisioner: salt-masterless"
 sidebar_current: "docs-provisioners-salt-masterless"
 description: |-

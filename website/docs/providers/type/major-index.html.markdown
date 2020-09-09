@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Major Cloud Providers"
 sidebar_current: "docs-providers-major"
 description: |-

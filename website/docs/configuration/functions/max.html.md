@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "max - Functions - Configuration Language"
 sidebar_current: "docs-funcs-numeric-max"
 description: |-

@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "jsondecode - Functions - Configuration Language"
 sidebar_current: "docs-funcs-encoding-jsondecode"
 description: |-

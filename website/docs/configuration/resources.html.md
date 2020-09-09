@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Resources - Configuration Language"
 sidebar_current: "docs-config-resources"
 description: |-

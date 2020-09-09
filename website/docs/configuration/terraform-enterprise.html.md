@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Configuring Terraform Push"
 sidebar_current: "docs-config-push"
 description: |-

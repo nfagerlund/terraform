@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Provisioner: file"
 sidebar_current: "docs-provisioners-file"
 description: |-

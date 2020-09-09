@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "trimspace - Functions - Configuration Language"
 sidebar_current: "docs-funcs-string-trimspace"
 description: |-

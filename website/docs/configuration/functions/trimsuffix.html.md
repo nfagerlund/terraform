@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "trimsuffix - Functions - Configuration Language"
 sidebar_current: "docs-funcs-string-trimsuffix"
 description: |-
