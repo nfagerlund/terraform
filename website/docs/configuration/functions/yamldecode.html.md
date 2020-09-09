@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "yamldecode - Functions - Configuration Language"
 sidebar_current: "docs-funcs-encoding-yamldecode"
 description: |-

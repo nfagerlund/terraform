@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "slice - Functions - Configuration Language"
 sidebar_current: "docs-funcs-collection-slice"
 description: |-

@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "State: Import Existing Resources"
 sidebar_current: "docs-state-import"
 description: |-

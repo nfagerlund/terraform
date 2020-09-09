@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "rsadecrypt - Functions - Configuration Language"
 sidebar_current: "docs-funcs-crypto-rsadecrypt"
 description: |-

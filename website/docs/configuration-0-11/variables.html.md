@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Input Variables - 0.11 Configuration Language"
 sidebar_current: "docs-conf-old-variables"
 description: |-

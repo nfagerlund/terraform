@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "fileexists - Functions - Configuration Language"
 sidebar_current: "docs-funcs-file-file-exists"
 description: |-

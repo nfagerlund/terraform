@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Provider: Terraform"
 sidebar_current: "docs-terraform-index"
 description: |-

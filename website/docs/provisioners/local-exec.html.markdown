@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Provisioner: local-exec"
 sidebar_current: "docs-provisioners-local"
 description: |-

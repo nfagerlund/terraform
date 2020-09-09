@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "regex - Functions - Configuration Language"
 sidebar_current: "docs-funcs-string-regex"
 description: |-

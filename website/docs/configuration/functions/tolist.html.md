@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "tolist - Functions - Configuration Language"
 sidebar_current: "docs-funcs-conversion-tolist"
 description: |-

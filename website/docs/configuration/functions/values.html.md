@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "values - Functions - Configuration Language"
 sidebar_current: "docs-funcs-collection-values"
 description: |-

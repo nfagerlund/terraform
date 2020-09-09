@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Backend Type: etcdv3"
 sidebar_current: "docs-backends-types-standard-etcdv3"
 description: |-

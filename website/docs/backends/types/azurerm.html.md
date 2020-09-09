@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Backend Type: azurerm"
 sidebar_current: "docs-backends-types-standard-azurerm"
 description: |-

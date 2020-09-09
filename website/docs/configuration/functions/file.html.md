@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "file - Functions - Configuration Language"
 sidebar_current: "docs-funcs-file-file-x"
 description: |-

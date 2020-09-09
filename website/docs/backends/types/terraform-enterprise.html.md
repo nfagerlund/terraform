@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Backend Type: terraform enterprise"
 sidebar_current: "docs-backends-types-standard-terraform-enterprise"
 description: |-

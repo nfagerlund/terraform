@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Provisioner: chef"
 sidebar_current: "docs-provisioners-chef"
 description: |-

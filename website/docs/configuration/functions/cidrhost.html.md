@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "cidrhost - Functions - Configuration Language"
 sidebar_current: "docs-funcs-ipnet-cidrhost"
 description: |-

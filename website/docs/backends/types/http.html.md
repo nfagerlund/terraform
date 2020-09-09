@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Backend Type: http"
 sidebar_current: "docs-backends-types-standard-http"
 description: |-

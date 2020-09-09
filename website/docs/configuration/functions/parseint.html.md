@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "parseint - Functions - Configuration Language"
 sidebar_current: "docs-funcs-numeric-parseint"
 description: |-

@@ -1,5 +1,5 @@
 ---
-layout: "docs-language"
+layout: "language"
 page_title: "Backend Type: pg"
 sidebar_current: "docs-backends-types-standard-pg"
 description: |-
