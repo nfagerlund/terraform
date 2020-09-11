@@ -10,10 +10,15 @@ earlier, see
 [0.11 Configuration Language: Terraform Settings](../configuration-0-11/terraform.html).
 
 
-Each Terraform configuration can specify a backend, which defines exactly where
+Each Terraform configuration can specify a backend, which defines where
 and how operations are performed, where [state](/docs/state/index.html)
-snapshots are stored, etc. Most non-trivial Terraform configurations configure
-a remote backend so that multiple people can work with the same infrastructure.
+snapshots are stored, etc.
+
+- If you are just teaching yourself Terraform, we recommend using the default
+  `local` backend, which requires no configuration.
+- If you and your team are using Terraform to manage meaningful infrastructure,
+  we recommend using the `remote` backend with Terraform Cloud or Terraform
+  Enterprise.
 
 ## Using a Backend Block
 
@@ -37,6 +42,10 @@ There are some important limitations on backend configuration:
 - A configuration can only provide one backend block.
 - A backend block cannot refer to named values (like input variables, locals, or data source attributes).
 
+For security or flexibility, you can omit some backend setting from your primary
+configuration and provide them at run time. See
+[Partial Configuration](#partial-configuration) below for details.
+
 ### Backend Types
 
 The block label of the backend block (`"remote"`, in the example above) indicates which backend type to use. Terraform has a built-in selection of backends, and the configured backend must be available in the version of Terraform you are using.
@@ -45,7 +54,7 @@ The arguments used in the block's body are specific to the chosen backend type; 
 
 Some backends allow providing access credentials directly as part of the configuration for use in unusual situations, for pragmatic reasons. However, in normal use we _do not_ recommend including access credentials as part of the backend configuration. Instead, leave those arguments completely unset and provide credentials via the credentials files or environment variables that are conventional for the target system, as described in the documentation for each backend.
 
-See _[Backend Types](/docs/backends/types/index.html)_ for details about each supported backend type and its configuration arguments.
+See the available backend types in the navigation sidebar for details about each supported backend type and its configuration arguments.
 
 ### Default Backend
 
@@ -74,8 +83,7 @@ automatically by an automation script running Terraform. When some or all of
 the arguments are omitted, we call this a _partial configuration_.
 
 With a partial configuration, the remaining configuration arguments must be
-provided as part of
-[the initialization process](/docs/backends/init.html#backend-initialization).
+provided as part of the initialization process.
 There are several ways to supply the remaining arguments:
 
   * **File**: A configuration file may be specified via the `init` command line.
@@ -149,7 +157,7 @@ both the configuration itself as well as the type of backend (for example
 from "consul" to "s3").
 
 Terraform will automatically detect any changes in your configuration
-and request a [reinitialization](/docs/backends/init.html). As part of
+and request a reinitialization. As part of
 the reinitialization process, Terraform will ask if you'd like to migrate
 your existing state to the new configuration. This allows you to easily
 switch from one backend to another.
@@ -165,8 +173,59 @@ want to migrate your state. You can respond "no" in this scenario.
 
 If you no longer want to use any backend, you can simply remove the
 configuration from the file. Terraform will detect this like any other
-change and prompt you to [reinitialize](/docs/backends/init.html).
+change and prompt you to reinitialize.
 
 As part of the reinitialization, Terraform will ask if you'd like to migrate
 your state back down to normal local state. Once this is complete then
 Terraform is back to behaving as it does by default.
+
+## More Details About Backends
+
+There are two areas of Terraform's behavior that are determined by the backend:
+
+- Where state is stored.
+- Where operations are performed.
+
+### State
+
+Terraform uses persistent [state](/docs/state/index.html) data to keep track of
+the resources it manages. Since it needs the state in order to know which
+real-world infrastructure objects correspond to the resources in a
+configuration, everyone working with a given group of infrastructure resources
+needs to be able to access the same state data.
+
+The `local` backend stores state as a local file on disk, but every other
+backend stores state in a remote service of some kind, which allows multiple
+people to access it. Accessing state in a remote service generally requires some
+kind of access credentials, since state date contains extremely sensitive
+information.
+
+Some backends act like plain "remote disks" for state files; others support
+_locking_ the state while operations are being performed, which helps prevent
+conflicts and inconsistencies.
+
+### Operations
+
+"Operations" refers to performing API requests against infrastructure services
+in order to create, read, update, or destroy resources. Not every `terraform`
+subcommand performs API operations; many of them only operate on state data.
+
+Only two backends can actually perform operations: `local` and `remote`.
+
+The `local` backend performs API operations directly from the machine where the
+`terraform` command is run. Whenever you use a backend other than `local` or
+`remote`, Terraform uses the `local` backend for operations; it only uses the
+configured backend for state storage.
+
+The `remote` backend can perform API operations remotely, using Terraform Cloud
+or Terraform Enterprise. When running remote operations, the local `terraform`
+command displays the output of the remote actions as though they were being
+performed locally, but only the remote system requires cloud credentials or
+network access to the resources being managed.
+
+Remote operations are optional for the `remote` backend; the settings for the
+target Terraform Cloud workspace determine whether operations run remotely or
+locally. If local operations are configured, Terraform uses the `remote` backend
+for state and the `local` backend for operations, like with the other state
+backends.
+
