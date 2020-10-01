@@ -7,7 +7,7 @@ page_title: "Expressions - Configuration Language"
 
 -> **Note:** This page is about Terraform 0.12 and later. For Terraform 0.11 and
 earlier, see
-[0.11 Configuration Language: Interpolation Syntax](../configuration-0-11/interpolation.html).
+[0.11 Configuration Language: Interpolation Syntax](/docs/configuration-0-11/interpolation.html).
 
 _Expressions_ are used to refer to or compute values within a configuration.
 The simplest expressions are just literal values, like `"hello"` or `5`,
@@ -18,7 +18,7 @@ and a number of built-in functions.
 Expressions can be used in a number of places in the Terraform language,
 but some contexts limit which expression constructs are allowed,
 such as requiring a literal value of a particular type or forbidding
-[references to resource attributes](/docs/configuration/expressions.html#references-to-resource-attributes).
+[references to resource attributes](/docs/configuration/expressions/references.html#references-to-resource-attributes).
 Each language feature's documentation describes any restrictions it places on expressions.
 
 You can experiment with the behavior of Terraform's expressions from

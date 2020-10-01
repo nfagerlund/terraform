@@ -57,12 +57,12 @@ EOT
 
 A heredoc string consists of:
 
-- An opening line, which consists of:
+- An opening sequence consisting of:
     - A heredoc marker (`<<` or `<<-` — two less-than signs, with an optional hyphen for indented heredocs)
     - A delimiter word of your own choosing
     - A line break
-- The contents of the string, which can span any number of lines.
-- The delimiter word you chose, alone on its own line
+- The contents of the string, which can span any number of lines
+- The delimiter word you chose, alone on its own line (with indentation allowed for indented heredocs)
 
 The `<<` marker followed by any identifier at the end of a line introduces the
 sequence. Terraform then processes the following lines until it finds one that

@@ -6,8 +6,8 @@ page_title: "Function Calls - Configuration Language"
 # Function Calls
 
 The Terraform language has a number of
-[built-in functions](../functions.html) that can be used
-within expressions as another way to transform and combine values. These
+[built-in functions](/docs/configuration/functions.html) that can be used
+in expressions to transform and combine values. These
 are similar to the operators but all follow a common syntax:
 
 ```hcl
@@ -44,5 +44,5 @@ The expansion symbol is three periods (`...`), not a Unicode ellipsis character
 ## Available Functions
 
 For a full list of available functions, see
-[the function reference](./functions.html).
+[the function reference](/docs/configuration/functions.html).
 

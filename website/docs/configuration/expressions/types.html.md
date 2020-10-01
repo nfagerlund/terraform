@@ -9,13 +9,15 @@ The result of an expression is a _value_. All values have a _type_, which
 dictates where that value can be used and what transformations can be
 applied to it.
 
+## Types
+
 The Terraform language uses the following types for its values:
 
 * `string`: a sequence of Unicode characters representing some text, like
   `"hello"`.
 * `number`: a numeric value. The `number` type can represent both whole
   numbers like `15` and fractional values like `6.283185`.
-* `bool`: either `true` or `false`. `bool` values can be used in conditional
+* `bool`: a boolean value, either `true` or `false`. `bool` values can be used in conditional
   logic.
 * `list` (or `tuple`): a sequence of values, like
   `["us-west-1a", "us-west-1c"]`. Elements in a list or tuple are identified by
@@ -47,12 +49,9 @@ characters, `"like this"`. There is also a "heredoc" syntax for more complex
 strings.
 
 String literals are the most complex kind of literal expression in
-Terraform, and have additional documentation on separate pages:
-
-* See [Strings](expressions.html#string-literals) for information about escape
-  sequences and the heredoc syntax.
-* See [String Templates](expressions.html#string-templates) for information about
-  interpolation and template directives.
+Terraform, and have their own page of documentation. See [Strings](./strings.html)
+for information about escape sequences, the heredoc syntax, interpolation, and
+template directives.
 
 ### Numbers
 
@@ -94,7 +93,7 @@ The values in a map
 can be arbitrary expressions.
 
 The keys in a map must be strings; they can be left unquoted if
-they are a valid [identifier](../syntax.html#identifiers), but must be quoted
+they are a valid [identifier](/docs/configuration/syntax.html#identifiers), but must be quoted
 otherwise. You can use a non-literal string expression as a key by wrapping it in
 parentheses, like `(var.business_unit_tag_name) = "SRE"`.
 
@@ -125,7 +124,7 @@ offer different ways to restrict the allowed values for input variables and
 resource arguments.
 
 For complete details about these types (and an explanation of why the difference
-usually doesn't matter), see [Type Constraints](../types.html).
+usually doesn't matter), see [Type Constraints](/docs/configuration/types.html).
 
 ## Type Conversion
 

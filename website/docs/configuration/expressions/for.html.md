@@ -61,10 +61,10 @@ together results that have a common key:
 For expressions are particularly useful when combined with other language
 features to combine collections together in various ways. For example,
 the following two patterns are commonly used when constructing map values
-to use with [resource `for_each`](./resources.html#for_each-multiple-resource-instances-defined-by-a-map-or-set-of-strings):
+to use with [resource `for_each`](/docs/configuration/resources.html#for_each-multiple-resource-instances-defined-by-a-map-or-set-of-strings):
 
 * Transform a multi-level nested structure into a flat list by
-  [using nested `for` expressions with the `flatten` function](./functions/flatten.html#flattening-nested-structures-for-for_each).
+  [using nested `for` expressions with the `flatten` function](/docs/configuration/functions/flatten.html#flattening-nested-structures-for-for_each).
 * Produce an exhaustive list of combinations of elements from two or more
   collections by
-  [using the `setproduct` function inside a `for` expression](./functions/setproduct.html#finding-combinations-for-for_each).
+  [using the `setproduct` function inside a `for` expression](/docs/configuration/functions/setproduct.html#finding-combinations-for-for_each).

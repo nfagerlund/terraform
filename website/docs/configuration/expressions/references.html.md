@@ -12,22 +12,29 @@ values.
 
 ## Types of Named Values
 
-The main kinds of named values available in Terraform are resources, input
-variables, local values, child module outputs, data sources, filesystem and
-workspace info, and block-local values. The sections below explain each kind of
-named value in detail.
+The main kinds of named values available in Terraform are:
+
+- Resources
+- Input variables
+- Local values
+- Child module outputs
+- Data sources
+- Filesystem and workspace info
+- Block-local values
+
+The sections below explain each kind of named value in detail.
 
 Although many of these names use dot-separated paths that resemble
-[attribute notation][inpage-index] for elements of object values, they are not
+[attribute notation](./types.html#indices-and-attributes) for elements of object values, they are not
 implemented as real objects. This means you must use them exactly as written:
 you cannot use square-bracket notation to replace the dot-separated paths, and
-you cannot iterate over the "parent object" of a named entity (for example, you
+you cannot iterate over the "parent object" of a named entity; for example, you
 cannot use `aws_instance` in a `for` expression to iterate over every AWS
-instance resource).
+instance resource.
 
 ### Resources
 
-`<RESOURCE TYPE>.<NAME>` represents a [managed resource](./resources.html) of
+`<RESOURCE TYPE>.<NAME>` represents a [managed resource](/docs/configuration/resources.html) of
 the given type and name.
 
 The value of a resource reference can vary, depending on whether the resource
@@ -35,7 +42,7 @@ uses `count` or `for_each`:
 
 - If the resource doesn't use `count` or `for_each`, the reference's value is an
   object. The resource's attributes are elements of the object, and you can
-  access them using [dot or square bracket notation][inpage-index].
+  access them using [dot or square bracket notation](./types.html#indices-and-attributes).
 - If the resource has the `count` argument set, the reference's value is a
   _list_ of objects representing its instances.
 - If the resource has the `for_each` argument set, the reference's value is a
@@ -49,22 +56,22 @@ For more information about how to use resource references, see
 
 ### Input Variables
 
-`var.<NAME>` is the value of the [input variable](./variables.html) of the given name.
+`var.<NAME>` is the value of the [input variable](/docs/configuration/variables.html) of the given name.
 
 ### Local Values
 
-`local.<NAME>` is the value of the [local value](./locals.html) of the given name.
+`local.<NAME>` is the value of the [local value](/docs/configuration/locals.html) of the given name.
 
 ### Child Module Outputs
 
 * `module.<MODULE NAME>.<OUTPUT NAME>` is the value of the specified
-  [output value](./outputs.html) from a
-  [child module](./modules.html) called by the current module.
+  [output value](/docs/configuration/outputs.html) from a
+  [child module](/docs/configuration/modules.html) called by the current module.
 
 ### Data Sources
 
 * `data.<DATA TYPE>.<NAME>` is an object representing a
-  [data resource](./data-sources.html) of the given data
+  [data resource](/docs/configuration/data-sources.html) of the given data
   source type and name. If the resource has the `count` argument set, the value
   is a list of objects representing its instances. If the resource has the `for_each`
   argument set, the value is a map of objects representing its instances.
@@ -89,15 +96,15 @@ These local names are described in the documentation for the specific contexts
 where they appear. Some of most common local names are:
 
 - `count.index`, in resources that use
-  [the `count` meta-argument](./resources.html#count-multiple-resource-instances-by-count).
+  [the `count` meta-argument](/docs/configuration/resources.html#count-multiple-resource-instances-by-count).
 - `each.key` / `each.value`, in resources that use
-  [the `for_each` meta-argument](./resources.html#for_each-multiple-resource-instances-defined-by-a-map-or-set-of-strings).
-- `self`, in [provisioner](../provisioners/index.html) and
-  [connection](../provisioners/connection.html) blocks.
+  [the `for_each` meta-argument](/docs/configuration/resources.html#for_each-multiple-resource-instances-defined-by-a-map-or-set-of-strings).
+- `self`, in [provisioner](/docs/provisioners/index.html) and
+  [connection](/docs/provisioners/connection.html) blocks.
 
 -> **Note:** Local names are often referred to as _variables_ or
 _temporary variables_ in their documentation. These are not [input
-variables](./variables.html); they are just arbitrary names
+variables](/docs/configuration/variables.html); they are just arbitrary names
 that temporarily represent a value.
 
 ## Named Values and Dependencies
@@ -144,7 +151,7 @@ for use in references, as follows:
 * The `id` attribute exported by this resource type can be read using the
   same syntax, giving `aws_instance.example.id`.
 * The arguments of the `ebs_block_device` nested blocks can be accessed using
-  a [splat expression](#splat-expressions). For example, to obtain a list of
+  a [splat expression](./splat.html). For example, to obtain a list of
   all of the `device_name` values, use
   `aws_instance.example.ebs_block_device[*].device_name`.
 * The nested blocks in this particular resource type do not have any exported
@@ -157,27 +164,27 @@ for use in references, as follows:
   had a hypothetical nested block type `device` that accepted such a key, it
   would look like this in configuration:
 
-  ```hcl
-    device "foo" {
-      size = 2
-    }
-    device "bar" {
-      size = 4
-    }
-  ```
+    ```hcl
+      device "foo" {
+        size = 2
+      }
+      device "bar" {
+        size = 4
+      }
+    ```
 
-  Arguments inside blocks with _keys_ can be accessed using index syntax, such
-  as `aws_instance.example.device["foo"].size`.
+    Arguments inside blocks with _keys_ can be accessed using index syntax, such
+    as `aws_instance.example.device["foo"].size`.
 
-  To obtain a map of values of a particular argument for _labelled_ nested
-  block types, use a [`for` expression](#for-expressions):
-  `{for k, device in aws_instance.example.device : k => device.size}`.
+    To obtain a map of values of a particular argument for _labelled_ nested
+    block types, use a [`for` expression](./for.html):
+    `{for k, device in aws_instance.example.device : k => device.size}`.
 
 When a resource has the
-[`count`](https://www.terraform.io/docs/configuration/resources.html#count-multiple-resource-instances-by-count)
+[`count`](/docs/configuration/resources.html#count-multiple-resource-instances-by-count)
 argument set, the resource itself becomes a _list_ of instance objects rather than
 a single object. In that case, access the attributes of the instances using
-either [splat expressions](#splat-expressions) or index syntax:
+either [splat expressions](./splat.html) or index syntax:
 
 * `aws_instance.example[*].id` returns a list of all of the ids of each of the
   instances.
@@ -187,13 +194,13 @@ When a resource has the
 [`for_each`](/docs/configuration/resources.html#for_each-multiple-resource-instances-defined-by-a-map-or-set-of-strings)
 argument set, the resource itself becomes a _map_ of instance objects rather than
 a single object, and attributes of instances must be specified by key, or can
-be accessed using a [`for` expression](#for-expressions).
+be accessed using a [`for` expression](./for.html).
 
 * `aws_instance.example["a"].id` returns the id of the "a"-keyed resource.
 * `[for value in aws_instance.example: value.id]` returns a list of all of the ids
   of each of the instances.
 
-Note that unlike `count`, splat expressions are _not_ directly applicable to resources managed with `for_each`, as splat expressions are for lists only. You may apply a splat expression to values in a map like so:
+Note that unlike `count`, splat expressions are _not_ directly applicable to resources managed with `for_each`, as splat expressions must act on a list value. However, you can use the `values()` function to extract the instances as a list and use that list value in a splat expression:
 
 * `values(aws_instance.example)[*].id`
 
