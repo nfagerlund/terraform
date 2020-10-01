@@ -1,6 +1,6 @@
 ---
 layout: "language"
-page_title: "Language Summary - Configuration Language"
+page_title: "Language Overview - Configuration Language"
 sidebar_current: "docs-config-index"
 description: |-
   Terraform uses text files to describe infrastructure and to set variables.
@@ -8,7 +8,7 @@ description: |-
   written in the Terraform language.
 ---
 
-# Configuration Language
+# Language Overview
 
 -> **Note:** This page is about Terraform 0.12 and later. For Terraform 0.11 and
 earlier, see
