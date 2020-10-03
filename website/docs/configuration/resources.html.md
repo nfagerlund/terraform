@@ -81,7 +81,7 @@ resource type's name. (By convention, resource type names start with their
 provider's preferred local name.) When using multiple configurations of a
 provider (or non-preferred local provider names), you must use the `provider`
 meta-argument to manually choose an alternate provider configuration. See
-[the section on `provider` below][inpage-provider] for more details.
+[the `provider` meta-argument](./resource-provider.html) for more details.
 
 ### Resource Arguments
 
@@ -197,7 +197,7 @@ However, some dependencies cannot be recognized implicitly in configuration. For
 example, if Terraform must manage access control policies _and_ take actions
 that require those policies to be present, there is a hidden dependency between
 the access policy and a resource whose creation depends on it. In these rare
-cases, [the `depends_on` meta-argument][inpage-depend] can explicitly specify a
+cases, [the `depends_on` meta-argument](./depends_on.html) can explicitly specify a
 dependency.
 
 ## Meta-Arguments
@@ -208,65 +208,9 @@ any resource type to change the behavior of resources:
 - [`depends_on`, for specifying hidden dependencies](./depends_on.html)
 - [`count`, for creating multiple resource instances according to a count](./count.html)
 - [`for_each`, to create multiple instances according to a map, or set of strings](./for_each.html)
-- [`provider`, for selecting a non-default provider configuration][inpage-provider] (described below)
+- [`provider`, for selecting a non-default provider configuration](./resource-provider.html)
 - [`lifecycle`, for lifecycle customizations](./lifecycle.html)
 - [`provisioner` and `connection`, for taking extra actions after resource creation](/docs/provisioners/index.html)
-
-## `provider`: Selecting a Non-default Provider Configuration
-
-[inpage-provider]: #provider-selecting-a-non-default-provider-configuration
-
-The `provider` meta-argument specifies which provider configuration to use,
-overriding Terraform's default behavior of selecting one based on the resource
-type name. Its value should be an unquoted `<PROVIDER>.<ALIAS>` reference.
-
-As described in [Provider Configuration](./providers.html), you can optionally
-create multiple configurations for a single provider (usually to manage
-resources in different regions of multi-region services). Each provider can have
-one default configuration, and any number of alternate configurations that
-include an extra name segment (or "alias").
-
-By default, Terraform interprets the initial word in the resource type name
-(separated by underscores) as the local name of a provider, and uses that
-provider's default configuration. For example, the resource type
-`google_compute_instance` is associated automatically with the default
-configuration for the provider named `google`.
-
-By using the `provider` meta-argument, you can select an alternate provider
-configuration for a resource:
-
-```hcl
-# default configuration
-provider "google" {
-  region = "us-central1"
-}
-
-# alternate configuration, whose alias is "europe"
-provider "google" {
-  alias  = "europe"
-  region = "europe-west1"
-}
-
-resource "google_compute_instance" "example" {
-  # This "provider" meta-argument selects the google provider
-  # configuration whose alias is "europe", rather than the
-  # default configuration.
-  provider = google.europe
-
-  # ...
-}
-```
-
-A resource always has an implicit dependency on its associated provider, to
-ensure that the provider is fully configured before any resource actions
-are taken.
-
-The `provider` meta-argument expects
-[a `<PROVIDER>.<ALIAS>` reference](./providers.html#referring-to-alternate-providers),
-which does not need to be quoted. Arbitrary expressions are not permitted for
-`provider` because it must be resolved while Terraform is constructing the
-dependency graph, before it is safe to evaluate expressions.
-
 
 ## Local-only Resources
 
