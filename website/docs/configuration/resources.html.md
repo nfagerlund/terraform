@@ -202,92 +202,17 @@ dependency.
 
 ## Meta-Arguments
 
-Terraform CLI defines the following meta-arguments, which can be used with
+The Terraform language defines the following meta-arguments, which can be used with
 any resource type to change the behavior of resources:
 
-- [`depends_on`, for specifying hidden dependencies][inpage-depend]
-- [`count`, for creating multiple resource instances according to a count][inpage-count]
-- [`for_each`, to create multiple instances according to a map, or set of strings][inpage-for_each]
-- [`provider`, for selecting a non-default provider configuration][inpage-provider]
-- [`lifecycle`, for lifecycle customizations][inpage-lifecycle]
-- [`provisioner` and `connection`, for taking extra actions after resource creation][inpage-provisioner]
+- [`depends_on`, for specifying hidden dependencies](./depends_on.html)
+- [`count`, for creating multiple resource instances according to a count](./count.html)
+- [`for_each`, to create multiple instances according to a map, or set of strings](./for_each.html)
+- [`provider`, for selecting a non-default provider configuration][inpage-provider] (described below)
+- [`lifecycle`, for lifecycle customizations](./lifecycle.html)
+- [`provisioner` and `connection`, for taking extra actions after resource creation](/docs/provisioners/index.html)
 
-These arguments often have additional restrictions on what language features can
-be used with them, which are described in each
-
-### `depends_on`: Explicit Resource Dependencies
-
-[inpage-depend]: #depends_on-explicit-resource-dependencies
-
-Use the `depends_on` meta-argument to handle hidden resource dependencies that
-Terraform can't automatically infer.
-
-Explicitly specifying a dependency is only necessary when a resource relies on
-some other resource's behavior but _doesn't_ access any of that resource's data
-in its arguments.
-
-This argument is available in all `resource` blocks, regardless of resource
-type. For example:
-
-```hcl
-resource "aws_iam_role" "example" {
-  name = "example"
-
-  # assume_role_policy is omitted for brevity in this example. See the
-  # documentation for aws_iam_role for a complete example.
-  assume_role_policy = "..."
-}
-
-resource "aws_iam_instance_profile" "example" {
-  # Because this expression refers to the role, Terraform can infer
-  # automatically that the role must be created first.
-  role = aws_iam_role.example.name
-}
-
-resource "aws_iam_role_policy" "example" {
-  name   = "example"
-  role   = aws_iam_role.example.name
-  policy = jsonencode({
-    "Statement" = [{
-      # This policy allows software running on the EC2 instance to
-      # access the S3 API.
-      "Action" = "s3:*",
-      "Effect" = "Allow",
-    }],
-  })
-}
-
-resource "aws_instance" "example" {
-  ami           = "ami-a1b2c3d4"
-  instance_type = "t2.micro"
-
-  # Terraform can infer from this that the instance profile must
-  # be created before the EC2 instance.
-  iam_instance_profile = aws_iam_instance_profile.example
-
-  # However, if software running in this EC2 instance needs access
-  # to the S3 API in order to boot properly, there is also a "hidden"
-  # dependency on the aws_iam_role_policy that Terraform cannot
-  # automatically infer, so it must be declared explicitly:
-  depends_on = [
-    aws_iam_role_policy.example,
-  ]
-}
-```
-
-The `depends_on` meta-argument, if present, must be a list of references
-to other resources in the same module. Arbitrary expressions are not allowed
-in the `depends_on` argument value, because its value must be known before
-Terraform knows resource relationships and thus before it can safely
-evaluate expressions.
-
-The `depends_on` argument should be used only as a last resort. When using it,
-always include a comment explaining why it is being used, to help future
-maintainers understand the purpose of the additional dependency.
-
-
-
-### `provider`: Selecting a Non-default Provider Configuration
+## `provider`: Selecting a Non-default Provider Configuration
 
 [inpage-provider]: #provider-selecting-a-non-default-provider-configuration
 
@@ -342,35 +267,6 @@ which does not need to be quoted. Arbitrary expressions are not permitted for
 `provider` because it must be resolved while Terraform is constructing the
 dependency graph, before it is safe to evaluate expressions.
 
-
-### `provisioner` and `connection`: Resource Provisioners
-
-[inpage-provisioner]: #provisioner-and-connection-resource-provisioners
-
-> **Hands-on:** To learn about more declarative ways to handle provisioning actions, try the [Provision Infrastructure Deployed with Terraform](https://learn.hashicorp.com/collections/terraform/provision?utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS) collection on HashiCorp Learn.
-
-Some infrastructure objects require some special actions to be taken after they
-are created before they can become fully functional. For example, compute
-instances may require configuration to be uploaded or a configuration management
-program to be run before they can begin their intended operation.
-
-Create-time actions like these can be described using _resource provisioners_.
-A provisioner is another type of plugin supported by Terraform, and each
-provisioner takes a different kind of action in the context of a resource
-being created.
-
-Provisioning steps should be used sparingly, since they represent
-non-declarative actions taken during the creation of a resource and so
-Terraform is not able to model changes to them as it can for the declarative
-portions of the Terraform language.
-
-Provisioners can also be defined to run when a resource is _destroyed_, with
-certain limitations.
-
-The `provisioner` and `connection` block types within `resource` blocks are
-meta-arguments available across all resource types. Provisioners and their
-usage are described in more detail in
-[the Provisioners section](/docs/provisioners/index.html).
 
 ## Local-only Resources
 
