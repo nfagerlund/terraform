@@ -1,8 +1,8 @@
 ---
 layout: "language"
-page_title: "Modules - Configuration Language"
+page_title: "About Modules - Configuration Language"
 ---
 
-# Modules
+# About Modules
 
 TODO: write page

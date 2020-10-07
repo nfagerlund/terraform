@@ -13,12 +13,16 @@
       </li>
 
       <li>
-        <a href="/docs/configuration/all-syntax.html">List of Syntax Features</a>
+        <a href="/docs/configuration/all-features.html">Feature Lookup</a>
       </li>
 
       <li>
-        <a href="/docs/configuration/files/index.html">Files and Directories</a>
+        <a href="#">Files and Directories</a>
         <ul class="nav">
+          <li>
+            <a href="/docs/configuration/files/index.html">Overview</a>
+          </li>
+
           <li>
             <a href="/docs/configuration/override.html">Override Files</a>
           </li>
@@ -26,79 +30,109 @@
       </li>
 
       <li>
-        <a href="/docs/configuration/about-modules.html">About Modules</a>
-      </li>
-
-      <li>
-        <a href="/docs/providers/index.html">About Providers</a>
+        <a href="#">Modules and Providers</a>
         <ul class="nav">
           <li>
-             <a href="/docs/providers/type/major-index.html">Major Cloud</a>
+            <a href="/docs/configuration/about-modules.html">About Modules</a>
           </li>
 
           <li>
-             <a href="/docs/providers/type/cloud-index.html"> Cloud</a>
+            <a href="/docs/configuration/about-providers.html">About Providers</a>
           </li>
-
-          <li>
-             <a href="/docs/providers/type/infra-index.html">Infrastructure Software</a>
-          </li>
-
-          <li>
-             <a href="/docs/providers/type/network-index.html">Network</a>
-          </li>
-
-          <li>
-             <a href="/docs/providers/type/vcs-index.html">VCS</a>
-          </li>
-
-          <li>
-             <a href="/docs/providers/type/monitor-index.html">Monitor & System Management</a>
-          </li>
-
-          <li>
-             <a href="/docs/providers/type/database-index.html">Database</a>
-          </li>
-
-          <li>
-             <a href="/docs/providers/type/misc-index.html">Misc.</a>
-          </li>
-
-          <li>
-             <a href="/docs/providers/type/community-index.html">Community</a>
-          </li>
-
         </ul>
       </li>
 
       <li>
-        <a href="/docs/configuration/resources.html">Configuration Blocks</a>
+        <a href="/docs/configuration/blocks/index.html">Configuration Blocks</a>
         <ul class="nav">
+          <li>
+            <a href="/docs/configuration/blocks/index.html">Overview</a>
+          </li>
 
           <li>
             <a href="/docs/configuration/resources.html">Resources</a>
             <ul class="nav">
-              <li>
-                <a href="/docs/configuration/depends_on.html"><code>depends_on</code></a>
-              </li>
 
               <li>
-                <a href="/docs/configuration/count.html"><code>count</code></a>
+                <a href="#">Meta-Arguments</a>
+                <ul class="nav">
+                  <li>
+                    <a href="/docs/configuration/depends_on.html"><code>depends_on</code></a>
+                  </li>
+
+                  <li>
+                    <a href="/docs/configuration/count.html"><code>count</code></a>
+                  </li>
+
+                  <li>
+                    <a href="/docs/configuration/for_each.html"><code>for_each</code></a>
+                  </li>
+
+                  <li>
+                    <a href="/docs/configuration/resource-provider.html"><code>provider</code></a>
+                  </li>
+
+                  <li>
+                    <a href="/docs/configuration/lifecycle.html"><code>lifecycle</code></a>
+                  </li>
+                </ul>
               </li>
 
-              <li>
-                <a href="/docs/configuration/for_each.html"><code>for_each</code></a>
-              </li>
 
               <li>
-                <a href="/docs/configuration/resource-provider.html"><code>provider</code></a>
+                <a href="/docs/provisioners/index.html">Provisioners</a>
+                <ul class="nav">
+                  <li>
+                    <a href="/docs/provisioners/connection.html">Provisioner Connections</a>
+                  </li>
+
+                  <li>
+                    <a href="/docs/provisioners/null_resource.html">Provisioners Without a Resource</a>
+                  </li>
+
+                  <li>
+                    <a href="#">Generic Provisioners</a>
+                    <ul class="nav nav-auto-expand">
+                      <li>
+                        <a href="/docs/provisioners/file.html">file</a>
+                      </li>
+
+                      <li>
+                        <a href="/docs/provisioners/local-exec.html">local-exec</a>
+                      </li>
+
+                      <li>
+                        <a href="/docs/provisioners/remote-exec.html">remote-exec</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#">Vendor Provisioners</a>
+                    <ul class="nav nav-auto-expand">
+                      <li>
+                        <a href="/docs/provisioners/chef.html">chef</a>
+                      </li>
+
+                      <li>
+                        <a href="/docs/provisioners/habitat.html">habitat</a>
+                      </li>
+
+                      <li>
+                        <a href="/docs/provisioners/puppet.html">puppet</a>
+                      </li>
+
+                      <li>
+                        <a href="/docs/provisioners/salt-masterless.html">salt-masterless</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                </ul>
               </li>
 
-              <li>
-                <a href="/docs/configuration/lifecycle.html"><code>lifecycle</code></a>
-              </li>
             </ul>
-          </li>
+          </li> <!-- resources -->
 
           <li>
             <a href="/docs/configuration/provider-requirements.html">Provider Requirements</a>
@@ -223,60 +257,9 @@
             <a href="/docs/configuration/terraform.html">Terraform Settings</a>
           </li>
 
-          <li>
-            <a href="/docs/provisioners/index.html">Provisioners</a>
-            <ul class="nav">
-              <li>
-                <a href="/docs/provisioners/connection.html">Provisioner Connections</a>
-              </li>
-
-              <li>
-                <a href="/docs/provisioners/null_resource.html">Provisioners Without a Resource</a>
-              </li>
-
-              <li>
-                <a href="#">Generic Provisioners</a>
-                <ul class="nav nav-auto-expand">
-                  <li>
-                    <a href="/docs/provisioners/file.html">file</a>
-                  </li>
-
-                  <li>
-                    <a href="/docs/provisioners/local-exec.html">local-exec</a>
-                  </li>
-
-                  <li>
-                    <a href="/docs/provisioners/remote-exec.html">remote-exec</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#">Vendor Provisioners</a>
-                <ul class="nav nav-auto-expand">
-                  <li>
-                    <a href="/docs/provisioners/chef.html">chef</a>
-                  </li>
-
-                  <li>
-                    <a href="/docs/provisioners/habitat.html">habitat</a>
-                  </li>
-
-                  <li>
-                    <a href="/docs/provisioners/puppet.html">puppet</a>
-                  </li>
-
-                  <li>
-                    <a href="/docs/provisioners/salt-masterless.html">salt-masterless</a>
-                  </li>
-                </ul>
-              </li>
-
-            </ul>
-          </li>
-
         </ul>
-      </li>
+      </li> <!-- configuration blocks -->
+
 
       <li>
         <a href="/docs/configuration/expressions/index.html">Expressions</a>
@@ -332,7 +315,7 @@
       </li>
 
       <li>
-        <a href="/docs/configuration/syntax.html">Syntax</a>
+        <a href="#">Syntax</a>
         <ul class="nav">
           <li>
             <a href="/docs/configuration/syntax.html">Configuration Syntax</a>
@@ -349,10 +332,14 @@
       </li>
 
       <li>
-        <a href="/docs/configuration/functions.html">Function Reference</a>
+        <a href="#">Function Reference</a>
         <ul class="nav">
-          <li id="docs-funcs-numeric">
-            <a href="#docs-funcs-numeric">Numeric Functions</a>
+          <li>
+            <a href="/docs/configuration/functions.html">Overview</a>
+          </li>
+
+          <li>
+            <a href="#">Numeric Functions</a>
             <ul class="nav">
 
               <li>
@@ -394,8 +381,8 @@
             </ul>
           </li>
 
-          <li id="docs-funcs-string">
-            <a href="#docs-funcs-string">String Functions</a>
+          <li>
+            <a href="#">String Functions</a>
             <ul class="nav">
 
               <li>
@@ -473,8 +460,8 @@
             </ul>
           </li>
 
-          <li id="docs-funcs-collection">
-            <a href="#docs-funcs-collection">Collection Functions</a>
+          <li>
+            <a href="#">Collection Functions</a>
             <ul class="nav">
 
               <li>
@@ -596,8 +583,8 @@
             </ul>
           </li>
 
-          <li id="docs-funcs-encoding">
-            <a href="#docs-funcs-encoding">Encoding Functions</a>
+          <li>
+            <a href="#">Encoding Functions</a>
             <ul class="nav">
 
               <li>
@@ -639,8 +626,8 @@
             </ul>
           </li>
 
-          <li id="docs-funcs-file">
-            <a href="#docs-funcs-file">Filesystem Functions</a>
+          <li>
+            <a href="#">Filesystem Functions</a>
             <ul class="nav">
 
               <li>
@@ -682,8 +669,8 @@
             </ul>
           </li>
 
-          <li id="docs-funcs-datetime">
-            <a href="#docs-funcs-datetime">Date and Time Functions</a>
+          <li>
+            <a href="#">Date and Time Functions</a>
             <ul class="nav">
 
               <li>
@@ -701,8 +688,8 @@
             </ul>
           </li>
 
-          <li id="docs-funcs-crypto">
-            <a href="#docs-funcs-crypto">Hash and Crypto Functions</a>
+          <li>
+            <a href="#">Hash and Crypto Functions</a>
             <ul class="nav">
 
               <li>
@@ -772,8 +759,8 @@
             </ul>
           </li>
 
-          <li id="docs-funcs-ipnet">
-            <a href="#docs-funcs-ipnet">IP Network Functions</a>
+          <li>
+            <a href="#">IP Network Functions</a>
             <ul class="nav">
 
               <li>
@@ -796,8 +783,8 @@
           </li>
 
           <li>
-            <a href="#docs-funcs-conversion">Type Conversion Functions</a>
-            <ul class="nav" id="docs-funcs-conversion">
+            <a href="#">Type Conversion Functions</a>
+            <ul class="nav">
 
               <li>
                 <a href="/docs/configuration/functions/can.html">can</a>
@@ -836,12 +823,65 @@
 
         </ul>
 
-      </li>
-
+      </li><!-- function reference -->
 
       <li>
-        <a href="/docs/modules/index.html">Module Development</a>
+        <a href="#">Provider References</a>
         <ul class="nav">
+          <li>
+            <a href="/docs/providers/index.html">Overview and Main List</a>
+          </li>
+
+          <li>
+             <a href="/docs/providers/type/major-index.html">Major Cloud</a>
+          </li>
+
+          <li>
+             <a href="/docs/providers/type/cloud-index.html">Cloud</a>
+          </li>
+
+          <li>
+             <a href="/docs/providers/type/infra-index.html">Infrastructure Software</a>
+          </li>
+
+          <li>
+             <a href="/docs/providers/type/network-index.html">Network</a>
+          </li>
+
+          <li>
+             <a href="/docs/providers/type/vcs-index.html">VCS</a>
+          </li>
+
+          <li>
+             <a href="/docs/providers/type/monitor-index.html">Monitor & System Management</a>
+          </li>
+
+          <li>
+             <a href="/docs/providers/type/database-index.html">Database</a>
+          </li>
+
+          <li>
+             <a href="/docs/providers/type/misc-index.html">Misc.</a>
+          </li>
+
+          <li>
+             <a href="/docs/providers/type/community-index.html">Community</a>
+          </li>
+
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Module Development</a>
+        <ul class="nav">
+          <li>
+            <a href="/docs/modules/index.html">Overview</a>
+          </li>
+
+          <li>
+            <a href="/docs/modules/structure.html">Standard Module Structure</a>
+          </li>
+
           <li>
             <a href="/docs/modules/composition.html">Best Practices: Module Composition</a>
           </li>
@@ -853,8 +893,12 @@
       </li>
 
       <li>
-        <a href="/docs/state/index.html">State</a>
+        <a href="#">State</a>
         <ul class="nav">
+          <li>
+            <a href="/docs/state/index.html">Overview</a>
+          </li>
+
           <li>
             <a href="/docs/state/purpose.html">Purpose</a>
           </li>
@@ -882,26 +926,36 @@
       </li>
 
       <li>
-        <a href="/upgrade-guides/index.html">Upgrade Guides</a>
+        <a href="#">Upgrade Guides</a>
         <ul class="nav">
+          <li>
+            <a href="/upgrade-guides/index.html">Overview</a>
+          </li>
+
           <li>
             <a href="/upgrade-guides/0-13.html">Upgrading to v0.13</a>
           </li>
+
           <li>
             <a href="/upgrade-guides/0-12.html">Upgrading to v0.12</a>
           </li>
+
           <li>
             <a href="/upgrade-guides/0-11.html">Upgrading to v0.11</a>
           </li>
+
           <li>
             <a href="/upgrade-guides/0-10.html">Upgrading to v0.10</a>
           </li>
+
           <li>
             <a href="/upgrade-guides/0-9.html">Upgrading to v0.9</a>
           </li>
+
           <li>
             <a href="/upgrade-guides/0-8.html">Upgrading to v0.8</a>
           </li>
+
           <li>
             <a href="/upgrade-guides/0-7.html">Upgrading to v0.7</a>
           </li>
@@ -910,8 +964,12 @@
 
 
       <li>
-        <a href="/docs/configuration-0-11/index.html">Historical docs: 0.11 and Older</a>
+        <a href="#">Historical docs: 0.11 and Older</a>
         <ul class="nav">
+          <li>
+            <a href="/docs/configuration-0-11/index.html">Overview</a>
+          </li>
+
           <li>
             <a href="/docs/configuration-0-11/load.html">Load Order and Semantics</a>
           </li>
