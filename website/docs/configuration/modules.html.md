@@ -51,13 +51,22 @@ The label immediately after the `module` keyword is a local name, which the
 calling module can use to refer to this instance of the module.
 
 Within the block body (between `{` and `}`) are the arguments for the module.
-Most of the arguments correspond to [input variables](./variables.html)
-defined by the module, including the `servers` argument in the above example.
-Terraform also defines a few meta-arguments that are reserved by Terraform
-and used for its own purposes; we will discuss those throughout the rest of
-this section.
+Module calls use the following kinds of arguments:
 
-All modules require a `source` argument, which is a meta-argument defined by
+- The `source` argument is mandatory for all modules.
+
+- The `version` argument is recommended for modules from a registry.
+
+- Most other arguments correspond to [input variables](./variables.html)
+  defined by the module. (The `servers` argument in the example above is one of
+  these.)
+
+- Terraform defines a few other meta-arguments that can be used with all
+  modules, including `for_each` and `depends_on`.
+
+### Source
+
+All modules **require** a `source` argument, which is a meta-argument defined by
 Terraform. Its value is either the path to a local directory containing the
 module's configuration files, or a remote module source that Terraform should
 download and use. This value must be a literal string with no template
@@ -72,6 +81,63 @@ After adding, removing, or modifying `module` blocks, you must re-run
 `terraform init` to allow Terraform the opportunity to adjust the installed
 modules. By default this command will not upgrade an already-installed module;
 use the `-upgrade` option to instead upgrade to the newest available version.
+
+### Version
+
+[inpage-versions]: #module-versions
+
+When using modules installed from a module registry, we recommend explicitly
+constraining the acceptable version numbers to avoid unexpected or unwanted
+changes.
+
+Use the `version` argument in the `module` block to specify versions:
+
+```shell
+module "consul" {
+  source  = "hashicorp/consul/aws"
+  version = "0.0.5"
+
+  servers = 3
+}
+```
+
+The `version` argument accepts a [version constraint string](./version-constraints.html).
+Terraform will use the newest installed version of the module that meets the
+constraint; if no acceptable versions are installed, it will download the newest
+version that meets the constraint.
+
+Version constraints are supported only for modules installed from a module
+registry, such as the public [Terraform Registry](https://registry.terraform.io/)
+or [Terraform Cloud's private module registry](/docs/cloud/registry/index.html).
+Other module sources can provide their own versioning mechanisms within the
+source string itself, or might not support versions at all. In particular,
+modules sourced from local file paths do not support `version`; since
+they're loaded from the same source repository, they always share the same
+version as their caller.
+
+### Meta-arguments
+
+Along with `source` and `version`, Terraform defines a few more
+optional meta-arguments that have special meaning across all modules,
+described in more detail in the following pages:
+
+- `count` - Creates multiple instances of a module from a single `module` block.
+  See [the `count` page](./meta-arguments/count.html) for details.
+
+- `for_each` - Creates multiple instances of a module from a single `module`
+  block. See [the `for_each` page](./meta-arguments/for_each.html) for details.
+
+- `providers` - Passes provider configurations to a child module. See
+  [the `providers` page](./meta-arguments/module-providers.html) for details.
+  If not specified, the child module inherits all of the default (un-aliased)
+  provider configurations from the calling module.
+
+- `depends_on` - Creates explicit dependencies between the entire
+  module and the listed targets. See [the `depends_on` page](./meta-arguments/depends_on.html)
+  for details.
+
+In addition to the above, the `lifecycle` argument is not currently used by
+Terraform but is reserved for planned future features.
 
 ## Accessing Module Output Values
 
@@ -95,67 +161,6 @@ resource "aws_elb" "example" {
 For more information about referring to named values, see
 [Expressions](./expressions.html).
 
-## Other Meta-arguments
-
-Along with the `source` meta-argument described above, module blocks have
-some optional meta-arguments that have special meaning across all modules,
-described in more detail below:
-
-- `version` - A [version constraint string](./version-constraints.html)
-  that specifies acceptable versions of the module. Described in detail under
-  [Module Versions][inpage-versions] below.
-
-- `count` - Creates multiple instances of a module from a single `module` block.
-  See [the `count` page](./count.html) for details.
-
-- `for_each` - Creates multiple instances of a module from a single `module`
-  block. See [the `for_each` page](./for_each.html) for details.
-
-- `providers` - Passes provider configurations to a child module. See
-  [the Providers Within Modules page](./module-providers.html) for details.
-  If not specified, the child module inherits all of the default (un-aliased)
-  provider configurations from the calling module.
-
-- `depends_on` - Creates explicit dependencies between the entire
-  module and the listed targets. See [the `depends_on` page](./depends_on.html)
-  for details.
-
-In addition to the above, the `lifecycle` argument is not currently used by
-Terraform but is reserved for planned future features.
-
-## Module Versions
-
-[inpage-versions]: #module-versions
-
-When using modules installed from a module registry, we recommend explicitly
-constraining the acceptable version numbers to avoid unexpected or unwanted
-changes.
-
-Use the `version` attribute in the `module` block to specify versions:
-
-```shell
-module "consul" {
-  source  = "hashicorp/consul/aws"
-  version = "0.0.5"
-
-  servers = 3
-}
-```
-
-The `version` attribute accepts a [version constraint string](./version-constraints.html).
-Terraform will use the newest installed version of the module that meets the
-constraint; if no acceptable versions are installed, it will download the newest
-version that meets the constraint.
-
-Version constraints are supported only for modules installed from a module
-registry, such as the public [Terraform Registry](https://registry.terraform.io/)
-or [Terraform Cloud's private module registry](/docs/cloud/registry/index.html).
-Other module sources can provide their own versioning mechanisms within the
-source string itself, or might not support versions at all. In particular,
-modules sourced from local file paths do not support `version`; since
-they're loaded from the same source repository, they always share the same
-version as their caller.
-
 ## Transferring Resource State Into Modules
 
 When refactoring an existing configuration to split code into child modules,
@@ -170,7 +175,7 @@ Terraform that it has moved to a different module.
 
 When passing resource addresses to `terraform state mv`, resources within child
 modules must be prefixed with `module.<MODULE NAME>.`. If a module was called
-with `count` or `for_each` ([see below][inpage-multiple]), its resource
+with [`count`](./meta-arguments/count.html) or [`for_each`](./meta-arguments/for_each.html), its resource
 addresses must be prefixed with `module.<MODULE NAME>[<INDEX>].` instead, where
 `<INDEX>` matches the `count.index` or `each.key` value of a particular module
 instance.
