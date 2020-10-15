@@ -25,14 +25,14 @@ line endings (CRLF), though both are accepted.
 A _module_ is a collection of `.tf` and/or `.tf.json` files kept together in a
 directory.
 
-A Terraform module only consists of the top-level files in a directory; nested
-directories are treated as completely separate modules, and are not
-automatically included in the configuration.
+A Terraform module only consists of the top-level configuration files in a
+directory; nested directories are treated as completely separate modules, and
+are not automatically included in the configuration.
 
 Terraform evaluates all of the configuration files in a module, effectively
 treating the entire module as a single document. Separating various blocks into
-different files is purely for the convenience of maintainers, and has no
-effect on the module's behavior.
+different files is purely for the convenience of readers and maintainers, and
+has no effect on the module's behavior.
 
 A Terraform module can use [module calls](/docs/configuration/modules.html) to
 explicitly include other modules into the configuration. These child modules can
