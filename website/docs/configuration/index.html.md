@@ -5,15 +5,25 @@ page_title: "Overview - Configuration Language"
 
 # Terraform Language Documentation
 
-This is the documentation for Terraform's configuration language. It is relevant to users of Terraform CLI, Terraform Cloud, and Terraform Enterprise.
+This is the documentation for Terraform's configuration language. It is relevant
+to users of Terraform CLI, Terraform Cloud, and Terraform Enterprise.
 
 > **Hands-on:** Try the [Terraform: Get Started](https://learn.hashicorp.com/collections/terraform/aws-get-started?utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS) collection on HashiCorp Learn.
 
-The Terraform language is Terraform's primary user interface. Although the different editions of Terraform offer a variety of workflows for performing provisioning tasks, all of these workflows presuppose that you've written a Terraform configuration that describes the infrastructure resources Terraform will manage.
+_The Terraform language is Terraform's primary user interface._ In every edition
+of Terraform, a configuration written in the Terraform language is always at the
+heart of the workflow.
 
-This documentation also includes some information about how Terraform handles state, since state is relevant to all editions of Terraform and is deeply tied to the language's representation of resources.
+This documentation also includes some information about how Terraform handles
+state, since state is relevant to all editions of Terraform and is deeply tied
+to the language's representation of resources.
 
-- If you're new to the Terraform language, read the [Language Overview](./overview.html) to get oriented. This page explains the structure and purpose of the language and provides some realistic example code.
-- For detailed information about all of the language's features, browse the navigation sidebar.
-- To find documentation for a specific feature, you can use the navigation sidebar's "filter" feature to search for pages by name.
-- If you remember part of the syntax for a language feature but don't remember its name, you can browse the [list of Terraform language features](./all-features.html).
+- If you're new to the Terraform language, read the [Language Overview](./overview.html)
+  to get oriented. This page explains the structure and purpose of the language
+  and provides some realistic example code.
+- For detailed information about all of the language's features, browse the
+  navigation sidebar.
+- To find documentation for a specific feature, you can use the navigation
+  sidebar's "filter" feature to search for pages by name.
+- If you remember part of the syntax for a language feature but don't remember
+  its name, you can browse the [list of Terraform language features](./all-features.html).
