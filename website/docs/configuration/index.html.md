@@ -22,8 +22,4 @@ to the language's representation of resources.
   to get oriented. This page explains the structure and purpose of the language
   and provides some realistic example code.
 - For detailed information about all of the language's features, browse the
-  navigation sidebar.
-- To find documentation for a specific feature, you can use the navigation
-  sidebar's "filter" feature to search for pages by name.
-- If you remember part of the syntax for a language feature but don't remember
-  its name, you can browse the [list of Terraform language features](./all-features.html).
+  navigation sidebar or use the "filter" feature to search for pages by name.
