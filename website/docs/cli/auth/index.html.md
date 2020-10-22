@@ -28,9 +28,13 @@ Terraform CLI can integrate with Terraform Cloud in several ways:
   module registry, even for configurations that are not associated with a
   Terraform Cloud workspace.
 
-All of these use cases require you to authenticate Terraform CLI with your Terraform Cloud account in order to control access to your organization's information and infrastructure.
+In order to control access to your organization's information and
+infrastructure, all of these use cases require you to authenticate Terraform CLI
+with your Terraform Cloud account.
 
-The best way to handle CLI authentication is with the `login` and `logout` commands, which help automate the process of getting an API token for your Terraform Cloud user account.
+The best way to handle CLI authentication is with the `login` and `logout`
+commands, which help automate the process of getting an API token for your
+Terraform Cloud user account.
 
 For details, see:
 

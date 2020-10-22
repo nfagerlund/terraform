@@ -11,7 +11,7 @@ resources to match the desired state described in a
 
 When people refer to "running Terraform," they generally mean performing these
 provisioning actions in order to affect real infrastructure objects. The
-Terraform binary has many subcommands for a wide variety of administrative
+Terraform binary has many other subcommands for a wide variety of administrative
 actions, but these basic provisioning tasks are the core of Terraform.
 
 Terraform's provisioning workflow relies on three commands: `plan`, `apply`, and
@@ -44,8 +44,8 @@ For details, see [the `terraform plan` command](/docs/commands/plan.html).
 
 The `terraform apply` command performs a plan just like `terraform plan` does,
 but then actually carries out the planned changes to each resource using the
-relevant infrastructure provider's API. Unless instructed not to ahead of time,
-it asks for confirmation from the user before making any changes.
+relevant infrastructure provider's API. It asks for confirmation from the user
+before making any changes, unless it was explicitly told to skip approval.
 
 By default, `terraform apply` performs a fresh plan right before applying
 changes, and displays the plan to the user when asking for confirmation.
@@ -60,7 +60,8 @@ For details, see [the `terraform apply` command](/docs/commands/apply.html).
 
 The `terraform destroy` command destroys all of the resources being managed by
 the current working directory and workspace, using state data to determine which
-real world objects correspond to managed resources.
+real world objects correspond to managed resources. Like `terraform apply`, it
+asks for confirmation before proceeding.
 
 A destroy behaves exactly like deleting every resource from the configuration
 and then running an apply, except that it doesn't require editing the

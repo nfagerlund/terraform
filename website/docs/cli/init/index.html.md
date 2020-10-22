@@ -42,7 +42,9 @@ run init.
 
 Initialization performs several tasks to prepare a directory, including
 accessing state in the configured backend, downloading and installing provider
-plugins, and downloading modules.
+plugins, and downloading modules. Under some conditions (usually when changing
+from one backend to another), it might ask the user for guidance or
+confirmation.
 
 For details, see [the `terraform init` command](/docs/commands/init.html).
 
