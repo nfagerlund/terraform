@@ -34,14 +34,14 @@ keep backups of your state data when modifying state out-of-band.
 - Use [the `terraform state list` command](/docs/commands/state/list.html) and
   [the `terraform state show` command](/docs/commands/state/show.html) to
   inspect state data before using any of the other state commands to do anything
-  risky.
+  risky. (Or just use them when you're curious about something.)
 - Use [the `terraform refresh` command](/docs/commands/refresh.html) to update
   state data to match the real-world condition of the managed resources. This is
   done automatically during plans and applies, but not during any of the direct
   state operations listed below, so you might want to refresh before reading or
   modifying state if it's been a few hours since the last plan or apply.
 
-## Importing Pre-Existing Resources
+## Importing Pre-existing Resources
 
 The `terraform import` command can associate unmanaged resources with a resource
 address in a configuration, bringing them under Terraform's control.
@@ -56,17 +56,17 @@ the existing resource in place (although some changes can require destruction
 and re-creation, usually due to upstream API limitations).
 
 In some cases, you might want a resource to be destroyed and re-created even
-when Terraform doesn't think it's necessary. This usually comes up for
-infrastructure objects that aren't fully described by the arguments of their
-resource declarations due to side-effects that happen during creation; for
-example, a virtual machine that configures itself with `cloud-init` on startup
-might no longer meet your needs if the cloud-init configuration changes.
+when Terraform doesn't think it's necessary. This is usually for objects that
+aren't fully described by their resource arguments due to side-effects that
+happen during creation; for example, a virtual machine that configures itself
+with `cloud-init` on startup might no longer meet your needs if the cloud-init
+configuration changes.
 
 [The `terraform taint` command](/docs/commands/taint.html) tells Terraform to
 destroy and re-create a particular resource during the next apply, regardless of
-whether its resource attributes would require that. Tainting works by marking
-the state data, so it will take effect on the next apply even if that apply is
-performed by someone other than yourself.
+whether its resource arguments would normally require that. Tainting works by
+marking the state data, so it will take effect on the next apply even if that
+apply is performed by someone other than yourself.
 
 [The `terraform untaint` command](/docs/commands/untaint.html) undoes a previous
 taint, and can also preserve a resource that was automatically tainted due to
@@ -82,13 +82,13 @@ of a resource if you change its name or move it to a different module.
 Often this is fine; Terraform will destroy the old resource, but will recreate a
 similar resource in its place, associate it with the new resource address, and
 update any resources that rely on that resource's attributes accordingly.
-However, sometimes you don't want a resource to be destroyed or recreated, due
+However, sometimes you don't want a resource to be destroyed and recreated, due
 to cost or a desire for continuity.
 
 - [The `terraform state mv` command](/docs/commands/state/mv.html) can change
   which resource address in your configuration is associated with a particular
-  real-world infrastructure object. Use this to preserve an object when renaming
-  a resource, or when moving a resource into or out of a child module.
+  real-world object. Use this to preserve an object when renaming a resource, or
+  when moving a resource into or out of a child module.
 - [The `terraform state rm` command](/docs/commands/state/rm.html) tells
   Terraform to stop managing a resource as part of the current working directory
   and workspace, _without_ destroying the corresponding real-world object. You
@@ -96,6 +96,10 @@ to cost or a desire for continuity.
   want to bring it under management using a completely different Terraform
   configuration (in which case you would subsequently use `terraform import` in
   a different working directory to bring the resource into its new home).
+
+    Note that if you use this and don't subsequently delete the resource from
+    the configuration, Terraform will create a new resource to take its place
+    during the next apply.
 
 ## Changing Providers
 
@@ -113,10 +117,11 @@ resources to your new fork; resources in state data are associated with the
 canonical source address of the provider that implements them, so replacing a
 provider can cause all existing resources to be destroyed and re-created.
 
-If you need to replace a provider with a similar plugin that implements many of
-the same resource types, you can use [the `terraform state replace-provider`
-command](/docs/commands/state/replace-provider.html) to transfer existing
-resources to the new provider without requiring them to be re-created.
+If you need to replace a provider with a similar plugin that implements the same
+resource types, you can use
+[the `terraform state replace-provider` command](/docs/commands/state/replace-provider.html)
+to transfer existing resources to the new provider without requiring them to be
+re-created.
 
 Note that this can only yield good results if the two providers are very closely
 related and implement the affected resources in very nearly the same way.
