@@ -25,7 +25,8 @@ Terraform CLI can integrate with Terraform Cloud in several ways:
   Terraform CLI, which then treats the remote workspace as a plain state
   backend. This also uses the `remote` backend.
 - Terraform CLI can install and use modules from Terraform Cloud's private
-  module registry.
+  module registry, even for configurations that are not associated with a
+  Terraform Cloud workspace.
 
 All of these use cases require you to authenticate Terraform CLI with your Terraform Cloud account in order to control access to your organization's information and infrastructure.
 
