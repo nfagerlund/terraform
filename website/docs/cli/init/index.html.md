@@ -21,7 +21,8 @@ A Terraform working directory typically contains:
 - A Terraform configuration describing resources Terraform should manage. This
   configuration is expected to change over time.
 - A hidden `.terraform` directory, which Terraform uses to manage cached
-  provider plugins and modules, record which workspace is currently active, and
+  provider plugins and modules, record which
+  [workspace](/docs/cli/workspaces/index.html) is currently active, and
   record the last known backend configuration in case it needs to migrate state
   on the next run. This directory is automatically managed by Terraform, and is
   created during initialization.
