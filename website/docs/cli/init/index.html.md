@@ -53,6 +53,10 @@ reinitialization before normal operations can continue. This includes changes to
 provider requirements, module sources or version constraints, and backend
 configurations.
 
+You can reinitialize a directory by running `terraform init` again. In fact, you
+can reinitialize at any time; the init command is idempotent, and will have no
+effect if no changes are required.
+
 If reinitialization is required, any commands that rely on initialization will
 fail with an error and tell you so.
 
