@@ -8,15 +8,14 @@ page_title: "Managing Workspaces - Terraform CLI"
 In Terraform CLI, _workspaces_ are separate instances of
 [state data](/docs/state/index.html) that can be used from the same working
 directory. You can use workspaces to manage multiple non-overlapping groups of
-similar resources with the same configuration.
+resources with the same configuration.
 
 - Every [initialized working directory](/docs/cli/init/index.html) has at least
-  one workspace. (If you haven't configured multiple workspaces, this is just
-  the `default` workspace.)
+  one workspace. (If you haven't created other workspaces, it is a workspace
+  named `default`.)
 - For a given working directory, only one workspace can be _selected_ at a time.
-- Most of Terraform's commands that interact with state (including
-  [provisioning commands](/docs/cli/run/index.html) and
-  [state manipulation commands](/docs/cli/state/index.html)) will only interact
+- Most Terraform commands (including [provisioning](/docs/cli/run/index.html)
+  and [state manipulation](/docs/cli/state/index.html) commands) only interact
   with the currently selected workspace.
 - Use [the `terraform workspace select` command](/docs/commands/workspace/select.html)
   to change the currently selected workspace.
@@ -68,12 +67,12 @@ act more like completely separate working directories; each Terraform Cloud
 workspace has its own Terraform configuration, set of variable values, state
 data, run history, and settings.
 
-These two kinds of workspaces are different, but they're still related. When
-using Terraform CLI as a frontend for Terraform Cloud, you associate the current
-working directory with one or more remote workspaces by configuring
-[the `remote` backend](/docs/backends/types/remote.html). If you use a name
-prefix to associate the directory with multiple workspaces, you can use the
-`terraform workspace` commands to select which workspace to use.
+These two kinds of workspaces are different, but related. When using Terraform
+CLI as a frontend for Terraform Cloud, you associate the current working
+directory with one or more remote workspaces by configuring
+[the `remote` backend](/docs/backends/types/remote.html). If you associate the
+directory with multiple workspaces (using a name prefix), you can use the
+`terraform workspace` commands to select which remote workspace to use.
 
 For more information about using Terraform CLI with Terraform Cloud, see
 [CLI-driven Runs](/docs/cloud/run/cli.html) in the Terraform Cloud docs.
