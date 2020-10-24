@@ -491,6 +491,10 @@
             <ul class="nav">
 
               <li>
+                <a href="/docs/configuration/functions/alltrue.html">alltrue</a>
+              </li>
+
+              <li>
                 <a href="/docs/configuration/functions/chunklist.html">chunklist</a>
               </li>
 
@@ -934,6 +938,10 @@
           </li>
 
           <li>
+            <a href="/docs/backends/state.html">Backends: State Storage & Locking</a>
+          </li>
+
+          <li>
             <a href="/docs/state/import.html">Import Existing Resources</a>
           </li>
 
@@ -960,6 +968,10 @@
         <ul class="nav">
           <li>
             <a href="/upgrade-guides/index.html">Overview</a>
+          </li>
+
+          <li>
+            <a href="/upgrade-guides/0-14.html">Upgrading to v0.14</a>
           </li>
 
           <li>
@@ -1064,7 +1076,7 @@
 
     </ul>
 
-    <%= partial("layouts/otherdocs", :locals => { :skip => "Terraform CLI" }) %>
+    <%= partial("layouts/otherdocs", :locals => { :skip => "Terraform Language" }) %>
   <% end %>
 
   <%= yield %>
