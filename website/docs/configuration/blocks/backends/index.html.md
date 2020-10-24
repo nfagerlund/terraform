@@ -3,11 +3,13 @@ layout: "language"
 page_title: "Backend Overview - Configuration Language"
 ---
 
+# Backends
+
 Each Terraform configuration can specify a backend, which defines where
 and how operations are performed, where [state](/docs/state/index.html)
 snapshots are stored, etc.
 
-- If you are just teaching yourself Terraform, we recommend using the default
+- If you are still learning how to use Terraform, we recommend using the default
   `local` backend, which requires no configuration.
 - If you and your team are using Terraform to manage meaningful infrastructure,
   we recommend using the `remote` backend with [Terraform Cloud](/docs/cloud/index.html)
@@ -16,15 +18,24 @@ snapshots are stored, etc.
 ## Where Backends are Used
 
 Backend configuration is only used by [Terraform CLI](/docs/cli-index.html).
+Terraform Cloud and Terraform Enterprise always use their own state storage when
+performing Terraform runs, so they ignore any backend block in the
+configuration.
 
-When Terraform Cloud and Terraform Enterprise perform Terraform runs, they
-always use their own state storage for the current workspace, ignoring any
-backend block in the configuration.
+But since it's common to
+[use Terraform CLI alongside Terraform Cloud](/docs/cloud/run/cli.html)
+(and since certain state operations, like [tainting](/docs/commands/taint.html),
+can only be performed on the CLI), we recommend that Terraform Cloud users
+include a backend block in their configurations and configure the `remote`
+backend to use the relevant Terraform Cloud workspace(s).
 
-However, we still recommend including a backend block in configurations intended
-for use with Terraform Cloud. When the `remote` backend is properly configured,
-you can use Terraform CLI in your local terminal to perform remote runs in
-Terraform Cloud, which enables faster development workflows.
+## Where Backends Come From
+
+Terraform includes a built-in selection of backends; this selection has changed
+over time, but does not change very often.
+
+The built-in backends are the only backends. You cannot load additional backends
+as plugins.
 
 ## What Backends Do
 
