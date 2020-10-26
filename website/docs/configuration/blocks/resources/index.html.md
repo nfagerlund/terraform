@@ -12,3 +12,10 @@ Each resource block describes one or more infrastructure objects, such
 as virtual networks, compute instances, or higher-level components such
 as DNS records.
 
+- [Resource Blocks](/docs/configuration/resources.html) documents how to declare
+  resources, including information about meta-arguments like `for_each`.
+- [Provisioners](/docs/configuration/blocks/resources/provisioners/index.html)
+  documents configuring post-creation actions for a resource using the
+  `provisioner` and `connection` blocks. Since provisioners are non-declarative
+  and potentially unpredictable, we strongly recommend that you treat them as a
+  last resort.
