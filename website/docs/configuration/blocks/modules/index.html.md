@@ -18,3 +18,14 @@ resources into the configuration in a concise way. Modules
 can also be called multiple times, either within the same configuration or
 in separate configurations, allowing resource configurations to be packaged
 and re-used.
+
+This section documents how to call a module from another configuration:
+
+- [Module Blocks](/docs/configuration/modules.html) documents the syntax for
+  calling a child module from a parent module, including meta-arguments like
+  `for_each`.
+- [Module Sources](/docs/modules/sources.html) documents what kinds of paths,
+  addresses, and URIs can be used in the `source` argument of a module block.
+
+For information about developing reusable modules, see
+[Module Development](/docs/modules/index.html).
