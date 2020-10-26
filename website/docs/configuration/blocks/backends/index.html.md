@@ -9,6 +9,18 @@ Each Terraform configuration can specify a backend, which defines where
 and how operations are performed, where [state](/docs/state/index.html)
 snapshots are stored, etc.
 
+The rest of this page introduces the concept of backends; the other pages in
+this section document how to configure and use backends.
+
+- [Backend Configuration](/docs/configuration/backend.html) documents the form
+  of a `backend` block, which is used to select and configure a backend for a
+  Terraform configuration.
+- This section also includes a page for each of Terraform's built-in backends,
+  documenting its behavior and available settings. See the navigation sidebar
+  for a complete list.
+
+## Recommended Backends
+
 - If you are still learning how to use Terraform, we recommend using the default
   `local` backend, which requires no configuration.
 - If you and your team are using Terraform to manage meaningful infrastructure,
