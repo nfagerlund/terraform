@@ -13,12 +13,10 @@ nearly-top-level) blocks.
   infrastructure objects you want Terraform to manage. They're the most important
   part of the Terraform language.
 
-- [Provider Requirements](/docs/configuration/provider-requirements.html)
-  declare which providers a configuration needs so that Terraform can install them.
-  (Providers are the plugins that implement resource types.)
-
-- [Provider Configurations](/docs/configuration/providers.html) manage settings
-  for the providers you use, including things like cloud regions or base API URLs.
+- [Providers](/docs/configuration/blocks/providers/index.html) are the plugins
+  that implement resource types. Every configuration must declare which
+  providers it requires, and most providers also require configuration (like
+  endpoint URLs or cloud regions) before they can be used.
 
 - [Input Variables](/docs/configuration/variables.html) serve as parameters for
   a Terraform module, so users can customize behavior without editing the source.
