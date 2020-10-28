@@ -13,13 +13,13 @@ it with resources.
 
 > **Hands-on:** Try the [Manage Similar Resources With For Each](https://learn.hashicorp.com/tutorials/terraform/for-each?in=terraform/0-13&utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS) tutorial on HashiCorp Learn.
 
-By default, a [resource block](./resources.html) configures one real
-infrastructure object. (Similarly, a [module block](./modules.html) includes a
+By default, a [resource block](/docs/configuration/resources.html) configures one real
+infrastructure object. (Similarly, a [module block](/docs/configuration/modules.html) includes a
 child module's contents into the configuration one time.)
 However, sometimes you want to manage several similar objects (like a fixed
 pool of compute instances) without writing a separate block for each one.
 Terraform has two ways to do this:
-[`count`](./count.html) and `for_each`.
+[`count`](/docs/configuration/blocks/meta-arguments/count.html) and `for_each`.
 
 If a resource or module block includes a `for_each` argument whose value is a map or
 a set of strings, Terraform will create one instance for each member of
@@ -104,7 +104,7 @@ This object has two attributes:
 
 ## Using Expressions in `for_each`
 
-The `for_each` meta-argument accepts map or set [expressions](./expressions.html).
+The `for_each` meta-argument accepts map or set [expressions](/docs/configuration/expressions.html).
 However, unlike most arguments, the `for_each` value must be known
 _before_ Terraform performs any remote resource actions. This means `for_each`
 can't refer to any resource attributes that aren't known until after a
@@ -118,10 +118,10 @@ can use Terraform expressions and functions to derive a suitable value.
 For example:
 
 * Transform a multi-level nested structure into a flat list by
-  [using nested `for` expressions with the `flatten` function](./functions/flatten.html#flattening-nested-structures-for-for_each).
+  [using nested `for` expressions with the `flatten` function](/docs/configuration/functions/flatten.html#flattening-nested-structures-for-for_each).
 * Produce an exhaustive list of combinations of elements from two or more
   collections by
-  [using the `setproduct` function inside a `for` expression](./functions/setproduct.html#finding-combinations-for-for_each).
+  [using the `setproduct` function inside a `for` expression](/docs/configuration/functions/setproduct.html#finding-combinations-for-for_each).
 
 ## Referring to Instances
 
@@ -148,7 +148,7 @@ as a whole.
 ## Using Sets
 
 The Terraform language doesn't have a literal syntax for
-[set values](./types.html#collection-types), but you can use the `toset`
+[set values](/docs/configuration/types.html#collection-types), but you can use the `toset`
 function to explicitly convert a list of strings to a set:
 
 ```hcl
@@ -177,7 +177,7 @@ removes any duplicate elements. `toset(["b", "a", "b"])` will produce a set
 containing only `"a"` and `"b"` in no particular order; the second `"b"` is
 discarded.
 
-If you are writing a module with an [input variable](./variables.html) that
+If you are writing a module with an [input variable](/docs/configuration/variables.html) that
 will be used as a set of strings for `for_each`, you can set its type to
 `set(string)` to avoid the need for an explicit type conversion:
 
