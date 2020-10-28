@@ -138,7 +138,7 @@ referenced without an index or key.
 
 Similarly, resources from child modules with multiple instances are prefixed
 with `module.<NAME>[<KEY>]` when displayed in plan output and elsewhere in the UI.
-For a module with without `count` or `for_each`, the address will not contain
+For a module without `count` or `for_each`, the address will not contain
 the module index as the module's name suffices to reference the module.
 
 -> **Note:** Within nested `provisioner` or `connection` blocks, the special
