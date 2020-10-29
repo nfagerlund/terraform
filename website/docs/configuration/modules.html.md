@@ -33,7 +33,7 @@ about creating re-usable child modules, see [Module Development](/docs/modules/i
 
 To _call_ a module means to include the contents of that module into the
 configuration with specific values for its
-[input variables](./variables.html). Modules are called
+[input variables](/docs/configuration/variables.html). Modules are called
 from within other modules using `module` blocks:
 
 ```hcl
@@ -57,7 +57,7 @@ Module calls use the following kinds of arguments:
 
 - The `version` argument is recommended for modules from a registry.
 
-- Most other arguments correspond to [input variables](./variables.html)
+- Most other arguments correspond to [input variables](/docs/configuration/variables.html)
   defined by the module. (The `servers` argument in the example above is one of
   these.)
 
@@ -99,7 +99,7 @@ module "consul" {
 }
 ```
 
-The `version` argument accepts a [version constraint string](./version-constraints.html).
+The `version` argument accepts a [version constraint string](/docs/configuration/version-constraints.html).
 Terraform will use the newest installed version of the module that meets the
 constraint; if no acceptable versions are installed, it will download the newest
 version that meets the constraint.
@@ -120,18 +120,22 @@ optional meta-arguments that have special meaning across all modules,
 described in more detail in the following pages:
 
 - `count` - Creates multiple instances of a module from a single `module` block.
-  See [the `count` page](./meta-arguments/count.html) for details.
+  See [the `count` page](/docs/configuration/blocks/meta-arguments/count.html)
+  for details.
 
 - `for_each` - Creates multiple instances of a module from a single `module`
-  block. See [the `for_each` page](./meta-arguments/for_each.html) for details.
+  block. See
+  [the `for_each` page](/docs/configuration/blocks/meta-arguments/for_each.html)
+  for details.
 
 - `providers` - Passes provider configurations to a child module. See
-  [the `providers` page](./meta-arguments/module-providers.html) for details.
-  If not specified, the child module inherits all of the default (un-aliased)
-  provider configurations from the calling module.
+  [the `providers` page](/docs/configuration/blocks/meta-arguments/module-providers.html)
+  for details. If not specified, the child module inherits all of the default
+  (un-aliased) provider configurations from the calling module.
 
 - `depends_on` - Creates explicit dependencies between the entire
-  module and the listed targets. See [the `depends_on` page](./meta-arguments/depends_on.html)
+  module and the listed targets. See
+  [the `depends_on` page](/docs/configuration/blocks/meta-arguments/depends_on.html)
   for details.
 
 In addition to the above, the `lifecycle` argument is not currently used by
@@ -141,7 +145,7 @@ Terraform but is reserved for planned future features.
 
 The resources defined in a module are encapsulated, so the calling module
 cannot access their attributes directly. However, the child module can
-declare [output values](./outputs.html) to selectively
+declare [output values](/docs/configuration/outputs.html) to selectively
 export certain values to be accessed by the calling module.
 
 For example, if the `./app-cluster` module referenced in the example above
@@ -157,7 +161,7 @@ resource "aws_elb" "example" {
 ```
 
 For more information about referring to named values, see
-[Expressions](./expressions.html).
+[Expressions](/docs/configuration/expressions.html).
 
 ## Transferring Resource State Into Modules
 
@@ -173,15 +177,15 @@ Terraform that it has moved to a different module.
 
 When passing resource addresses to `terraform state mv`, resources within child
 modules must be prefixed with `module.<MODULE NAME>.`. If a module was called with
-[`count`](./meta-arguments/count.html) or
-[`for_each`](./meta-arguments/for_each.html),
+[`count`](/docs/configuration/blocks/meta-arguments/count.html) or
+[`for_each`](/docs/configuration/blocks/meta-arguments/for_each.html),
 its resource addresses must be prefixed with `module.<MODULE NAME>[<INDEX>].`
 instead, where `<INDEX>` matches the `count.index` or `each.key` value of a
 particular module instance.
 
 Full resource addresses for module contents are used within the UI and on the
 command line, but cannot be used within a Terraform configuration. Only
-[outputs](./outputs.html) from a module can be referenced from
+[outputs](/docs/configuration/outputs.html) from a module can be referenced from
 elsewhere in your configuration.
 
 ## Tainting resources within a module
