@@ -84,8 +84,6 @@ use the `-upgrade` option to instead upgrade to the newest available version.
 
 ### Version
 
-[inpage-versions]: #module-versions
-
 When using modules installed from a module registry, we recommend explicitly
 constraining the acceptable version numbers to avoid unexpected or unwanted
 changes.
@@ -174,11 +172,12 @@ If you want to make sure an existing resource is preserved, use
 Terraform that it has moved to a different module.
 
 When passing resource addresses to `terraform state mv`, resources within child
-modules must be prefixed with `module.<MODULE NAME>.`. If a module was called
-with [`count`](./meta-arguments/count.html) or [`for_each`](./meta-arguments/for_each.html), its resource
-addresses must be prefixed with `module.<MODULE NAME>[<INDEX>].` instead, where
-`<INDEX>` matches the `count.index` or `each.key` value of a particular module
-instance.
+modules must be prefixed with `module.<MODULE NAME>.`. If a module was called with
+[`count`](./meta-arguments/count.html) or
+[`for_each`](./meta-arguments/for_each.html),
+its resource addresses must be prefixed with `module.<MODULE NAME>[<INDEX>].`
+instead, where `<INDEX>` matches the `count.index` or `each.key` value of a
+particular module instance.
 
 Full resource addresses for module contents are used within the UI and on the
 command line, but cannot be used within a Terraform configuration. Only
