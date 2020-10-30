@@ -24,8 +24,16 @@ This section documents how to call a module from another configuration:
 - [Module Blocks](/docs/configuration/modules.html) documents the syntax for
   calling a child module from a parent module, including meta-arguments like
   `for_each`.
+
 - [Module Sources](/docs/modules/sources.html) documents what kinds of paths,
   addresses, and URIs can be used in the `source` argument of a module block.
+
+- The Meta-Arguments section documents special arguments that can be used with
+  every module, including
+  [`providers`](/docs/configuration/blocks/meta-arguments/module-providers.html),
+  [`depends_on`](/docs/configuration/blocks/meta-arguments/depends_on.html),
+  [`count`](/docs/configuration/blocks/meta-arguments/count.html),
+  and [`for_each`](/docs/configuration/blocks/meta-arguments/for_each.html).
 
 For information about developing reusable modules, see
 [Module Development](/docs/modules/index.html).
