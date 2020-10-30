@@ -12,8 +12,21 @@ Each resource block describes one or more infrastructure objects, such
 as virtual networks, compute instances, or higher-level components such
 as DNS records.
 
-- [Resource Blocks](/docs/configuration/resources.html) documents how to declare
-  resources, including information about meta-arguments like `for_each`.
+- [Resource Blocks](/docs/configuration/blocks/resources/syntax.html) documents
+  the syntax for declaring resources.
+
+- [Resource Behavior](/docs/configuration/resources/behavior.html) explains in
+  more detail how Terraform handles resource declarations when applying a
+  configuration.
+
+- The Meta-Arguments section documents special arguments that can be used with
+  every resource type, including
+  [`depends_on`](/docs/configuration/blocks/meta-arguments/depends_on.html),
+  [`count`](/docs/configuration/blocks/meta-arguments/count.html),
+  [`for_each`](/docs/configuration/blocks/meta-arguments/for_each.html),
+  [`provider`](/docs/configuration/blocks/meta-arguments/resource-provider.html),
+  and [`lifecycle`](/docs/configuration/blocks/meta-arguments/lifecycle.html).
+
 - [Provisioners](/docs/configuration/blocks/resources/provisioners/index.html)
   documents configuring post-creation actions for a resource using the
   `provisioner` and `connection` blocks. Since provisioners are non-declarative
