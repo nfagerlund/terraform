@@ -28,18 +28,25 @@ If you import the same object multiple times, Terraform may exhibit unwanted
 behavior. For more information on this assumption, see
 [the State section](/docs/state/).
 
-## Currently State Only
+## Configuration is Not Auto-Generated
 
 The current implementation of Terraform import can only import resources
-into the [state](/docs/state). It does not generate configuration. A future
-version of Terraform will also generate configuration.
+into the [state](/docs/state). It does not generate configuration for those
+resources.
 
-Because of this, prior to running `terraform import` it is necessary to write
-manually a `resource` configuration block for the resource, to which the
-imported object will be mapped.
+This means importing a resource is a two-step process:
 
-While this may seem tedious, it still gives Terraform users an avenue for
-importing existing resources.
+1. Run `terraform import` to associate a real-world infrastructure object with a
+   named resource in Terraform's state.
+2. Write a [resource block](/docs/configuration/blocks/resources/index.html) for
+   a resource of the same name and type.
+
+Terraform treats an imported resource the same way it treats a resource created
+in a previous Terraform run: it does nothing if the configured arguments match
+the current real-world state, modifies it if the arguments and state don't
+match, and destroys it if there is no corresponding configuration block. See
+[resource behavior](/docs/configuration/blocks/resources/behavior.html)
+for more information.
 
 ## Remote Backends
 
@@ -50,4 +57,5 @@ Terraform Cloud environment. Because of this, the import command will not have
 access to information from the remote backend, such as workspace variables.
 
 In order to use Terraform import with a remote state backend, you may need to
-set local variables equivalent to the remote workspace variables.
+set local variables equivalent to the remote workspace variables. You may also
+need to set environment variables in your shell for provider credentials.
